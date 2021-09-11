@@ -14,7 +14,7 @@ class CustomerServiceTest {
 
     @Test
     fun getByIdTest() {
-        every { customerServiceMockk.getById(123456789) } returns Optional.of(customer)
+        every { customerServiceMockk.getById(123456789) } returns customer
 
         assertThat(customer.id).isEqualTo(123456789)
     }

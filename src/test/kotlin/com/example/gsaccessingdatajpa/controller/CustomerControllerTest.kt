@@ -6,8 +6,6 @@ import io.mockk.mockk
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.TestComponent
-import org.springframework.http.ResponseEntity
-import java.util.*
 
 @TestComponent
 class CustomerControllerTest {
@@ -15,21 +13,17 @@ class CustomerControllerTest {
 
     @Test
     fun getCustomerByIdTest() {
-        every { customerController.getCustomerById(customer.id) } returns customerOptionalResponseEntity
+        every { customerController.getCustomerById(customer.id.toString()) } returns customer
 
-        assertThat(customerOptionalResponseEntity.statusCode.value()).isEqualTo(200)
-        assertThat(customerOptionalResponseEntity.body).isEqualTo(customerOptionalResponseEntity.body)
+        assertThat(customer).isEqualTo(customer)
     }
 
     @Test
     fun createCustomerTest() {
-        every { customerController.createCustomer(customer) } returns customerResponseEntity
+        every { customerController.createCustomer(customer) } returns customer
 
-        assertThat(customerResponseEntity.statusCode.value()).isEqualTo(200)
-        assertThat(customerResponseEntity.body).isEqualTo(customerResponseEntity.body)
+        assertThat(customer).isEqualTo(customer)
     }
 
     private val customer = CustomerEntity(id = 123456789)
-    private val customerOptionalResponseEntity = ResponseEntity.of(Optional.of(Optional.of(customer)))
-    private val customerResponseEntity = ResponseEntity.of(Optional.of(customer))
 }

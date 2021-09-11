@@ -9,6 +9,6 @@ import java.util.*
 class CustomerService(
     val customerRepository: CustomerRepository
 ) {
-    fun getById(id: Long): Optional<CustomerEntity> = customerRepository.findById(id)
+    fun getById(id: Long): CustomerEntity = customerRepository.getById(id)
     fun createCustomer(customer: CustomerEntity) = customerRepository.save(customer)
 }

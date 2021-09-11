@@ -14,7 +14,7 @@ class CustomerRepositoryTest {
 
     @Test
     fun findByIdTest() {
-        every { customerRepository.findById(123456789) } returns Optional.of(customer)
+        every { customerRepository.getById(123456789) } returns customer
 
         assertThat(customer.id).isEqualTo(123456789)
     }
