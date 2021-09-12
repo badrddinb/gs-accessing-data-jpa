@@ -3,7 +3,6 @@ package com.example.gsaccessingdatajpa.service
 import com.example.gsaccessingdatajpa.entity.CustomerEntity
 import com.example.gsaccessingdatajpa.repository.CustomerRepository
 import org.springframework.stereotype.Service
-import java.util.*
 
 @Service
 class CustomerService(

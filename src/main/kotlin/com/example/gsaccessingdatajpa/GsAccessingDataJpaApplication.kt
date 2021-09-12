@@ -7,5 +7,5 @@ import org.springframework.boot.runApplication
 class GsAccessingDataJpaApplication
 
 fun main(args: Array<String>) {
-	runApplication<GsAccessingDataJpaApplication>(*args)
+    runApplication<GsAccessingDataJpaApplication>(*args)
 }

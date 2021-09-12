@@ -6,7 +6,6 @@ import io.mockk.mockk
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.TestComponent
-import java.util.*
 
 @TestComponent
 class CustomerServiceTest {
